@@ -14,7 +14,7 @@ make clean
 make $WORKSPACE/build/repos/nailgun.done
 
 cd $WORKSPACE/build/repos/nailgun/nailgun
-npm install
+sudo npm install
 
 # Cleaning database
 ./manage.py dropdb

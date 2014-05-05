@@ -6,7 +6,7 @@ cd $WORKSPACE
 #false
 
 cd $WORKSPACE/nailgun
-npm install || true
+sudo npm install || true
 cd $WORKSPACE
 
 if [ -x ./run_tests.sh ]; then

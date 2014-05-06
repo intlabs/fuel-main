@@ -26,8 +26,8 @@ $(BUILD_DIR)/packages/rpm/sources/$1/$2: $(call find-files,$3)
 	mkdir -p $(BUILD_DIR)/packages/rpm/sources/$1
 ifeq ($1,nailgun)
 	cd $3 && sudo npm install && sudo grunt build --static-dir=compressed_static
-	rm -rf $3/static
-	mv $3/compressed_static $3/static
+	sudo rm -rf $3/static
+	sudo mv $3/compressed_static $3/static
 endif
 	cd $3 && python setup.py sdist -d $(BUILD_DIR)/packages/rpm/sources/$1
 endef

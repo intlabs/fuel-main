@@ -37,8 +37,8 @@ endef
 define prepare_tgz_source
 $(BUILD_DIR)/packages/rpm/$1.done: $(BUILD_DIR)/packages/rpm/sources/$1/$2
 $(BUILD_DIR)/packages/rpm/sources/$1/$2: $(call find-files,$3)
-	mkdir -p $(BUILD_DIR)/packages/rpm/sources/$1
-	cd $3 && tar zcf $(BUILD_DIR)/packages/rpm/sources/$1/$2 *
+	sudo mkdir -p $(BUILD_DIR)/packages/rpm/sources/$1
+	cd $3 && sudo tar zcf $(BUILD_DIR)/packages/rpm/sources/$1/$2 *
 endef
 
 # Usage:
@@ -46,7 +46,7 @@ endef
 define prepare_ruby21_source
 $(BUILD_DIR)/packages/rpm/$1.done: $(BUILD_DIR)/packages/rpm/sources/$1/$2
 $(BUILD_DIR)/packages/rpm/sources/$1/$2: $(call find-files,$3)
-	mkdir -p $(BUILD_DIR)/packages/rpm/sources/$1
+	sudo mkdir -p $(BUILD_DIR)/packages/rpm/sources/$1
 	cd $3 && gem build *.gemspec && cp $2 $(BUILD_DIR)/packages/rpm/sources/$1/$2
 endef
 

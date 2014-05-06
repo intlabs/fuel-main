@@ -29,7 +29,7 @@ ifeq ($1,nailgun)
 	sudo rm -rf $3/static
 	sudo mv $3/compressed_static $3/static
 endif
-	cd $3 && python setup.py sdist -d $(BUILD_DIR)/packages/rpm/sources/$1
+	cd $3 && sudo python setup.py sdist -d $(BUILD_DIR)/packages/rpm/sources/$1
 endef
 
 # Usage:
